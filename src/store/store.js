@@ -1,19 +1,24 @@
-import { LocalStorage, Loading,  QSpinnerGears, uid, Dialog } from 'quasar'
-import { auth, db, storage } from 'boot/firebase'
+// import { LocalStorage, Loading,  QSpinnerGears, uid, Dialog } from 'quasar'
+import { auth, db } from 'boot/firebase'
 // import * as firebase from 'firebase/app'
 import { firestoreAction } from 'vuexfire'
-import { registerVersion } from 'firebase'
 
 const state = {
   regions: {},
   patients: {},
   images: {},
+  softparts: {},
   videos: {},
   cuts: {},
+  history: {},
+  configs: {},
+  actualImageCuts: []
 }
 
 const mutations = {
-  
+  updateactualImageCuts: (state, cuts) => {
+    state.actualImageCuts = cuts
+  }
 }
 
 const actions = {
@@ -33,6 +38,11 @@ const actions = {
     return bindFirestoreRef('images', db.collection('images'))
   }),
 
+  bindSoftparts: firestoreAction(({ bindFirestoreRef }) => {
+    // return the promise returned by bindFirestoreRef
+    return bindFirestoreRef('softparts', db.collection('softparts'))
+  }),
+
   bindVideos: firestoreAction(({ bindFirestoreRef }) => {
     // return the promise returned by bindFirestoreRef
     return bindFirestoreRef('videos', db.collection('videos'))
@@ -43,10 +53,15 @@ const actions = {
     return bindFirestoreRef('cuts', db.collection('cuts'))
   }),
 
+  bindConfigs: firestoreAction(({ bindFirestoreRef }) => {
+    // return the promise returned by bindFirestoreRef
+    return bindFirestoreRef('configs', db.collection('configs'))
+  }),
+
   loginAPP({}, payload) {
     auth.signInWithEmailAndPassword(payload.email, payload.password)
     .then(response => {
-      this.$router.push('/').catch(err => {})
+      this.$router.push('/')
       console.log(response)
     })
     .catch(error => {
@@ -61,7 +76,7 @@ const actions = {
         userID: response.user.uid,
         userName: payload.name,
       })
-      this.$router.push('/auth').catch(err => {})
+      this.$router.push('/auth')
     })
     .catch(error => {
       console.log(error)
@@ -70,7 +85,7 @@ const actions = {
 
   logoutAPP() {
     auth.signOut()
-    this.$router.push('/auth').catch(err => {})
+    this.$router.push('/auth').catch(err => {console.log(err)})
   }
 }
 
@@ -84,13 +99,25 @@ const getters = {
   getImages: (state) => {
     return state.images
   },
+  getSoftparts: (state) => {
+    return state.softparts
+  },
   getVideos: (state) => {
     return state.videos
   },
   getCuts: (state) => {
     return state.cuts
   },
-};
+  getUser: () => {
+    return auth.currentUser
+  },
+  getActualImageCuts: (state) => {
+    return state.actualImageCuts
+  },
+  getConfigs: (state) => {
+    return state.configs
+  }
+}
 
 export default {
   namespaced: true,

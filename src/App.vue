@@ -10,7 +10,7 @@ import { mapActions } from 'vuex'
 export default {
   name: 'App',
   methods: {
-    ...mapActions('store', ['bindRegions', 'bindPatients', 'bindCuts', 'bindVideos', 'bindImages'])
+    ...mapActions('store', ['bindRegions', 'bindPatients', 'bindCuts', 'bindVideos', 'bindSoftparts', 'bindImages', 'bindConfigs'])
   },
   mounted() {
     auth.onAuthStateChanged(user => {
@@ -20,12 +20,14 @@ export default {
       else {
         this.$router.replace('/auth').catch(err => {})
       }
-    });
+    })
     this.bindRegions(),
     this.bindPatients(),
     this.bindCuts(),
     this.bindVideos(),
-    this.bindImages()
+    this.bindSoftparts(),
+    this.bindImages(),
+    this.bindConfigs()
   },
 }
 </script>
