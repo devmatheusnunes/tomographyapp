@@ -21,11 +21,8 @@
         </div>
         <div>
           <div class="flex flex-center q-mt-sm">
-            <div class="">
-              <q-btn align="center" color="amber-13" text-color="black" icon-right="crop" label="Distância das Imagens" />
-            </div>
-            <div class="q-mt-sm">
-              <q-btn align="center" color="amber-13" text-color="black" icon-right="compare" label="Gerar Imagens" to="VideoResult"/>
+            <div class="q-mt-xl">
+              <q-btn align="center" color="amber-13" text-color="black" icon-right="compare" label="Gerar Imagens" to="video-result"/>
             </div>
           </div>
         </div>
@@ -54,13 +51,13 @@ export default {
 
 <style lang="sass" scoped>
 .q-page
-  background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
+  background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)
 
 .q-img
-  display: block;
-  margin-top: 1.5vh;
-  margin-bottom: 3vh;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 15%;
+  display: block
+  margin-top: 1.5vh
+  margin-bottom: 3vh
+  margin-left: auto
+  margin-right: auto
+  max-width: 15%
 </style>

@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex column">
-    <q-img src="~/assets/quasar-logo-full.svg"/>
+    <q-img src="~/assets/ctapp_logo.png" style="max-width: 20vw"/>
   </q-page>
 </template>
 
@@ -18,13 +18,13 @@ export default {
 
 <style lang="sass" scoped>
 .q-page
-  background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
+  background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)
 
 .q-img
-  display: block;
-  margin-top: 1.5vh;
-  margin-bottom: 3vh;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 15%;
+  display: block
+  margin-top: 1.5vh
+  margin-bottom: 3vh
+  margin-left: auto
+  margin-right: auto
+  max-width: 15%
 </style>

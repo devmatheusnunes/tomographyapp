@@ -1,8 +1,8 @@
 <template>
   <q-page class="flex column">
-    <q-img src="~/assets/quasar-logo-full.svg"/>
+    <q-img src="~/assets/ctapp_logo.png" style="max-width: 20vw"/>
 
-    <div class="row q-pa-md q-mt-md">
+    <div class="row q-pa-md q-mt-md" style="margin-top: 0vh">
       <div class="q-pr-sm">
         <q-card class="q-ma-sm flex flex-center bg-light-green" style="min-width: 39vw; min-height: 30vh;" bordered @click="$router.push('/cutscreen')">
           <q-card-section class="q-ma-sm">
@@ -31,13 +31,13 @@ export default {
 
 <style lang="sass" scoped>
 .q-page
-  background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
+  background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)
 
 .q-img
-  display: block;
-  margin-top: 1.5vh;
-  margin-bottom: 3vh;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 15%;
+  display: block
+  margin-top: 1.5vh
+  margin-bottom: 3vh
+  margin-left: auto
+  margin-right: auto
+  max-width: 15%
 </style>

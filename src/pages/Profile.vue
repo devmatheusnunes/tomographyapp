@@ -1,8 +1,8 @@
 <template>
   <q-page class="flex column">
-    <q-img src="~/assets/quasar-logo-full.svg"/>
+    <q-img src="~/assets/ctapp_logo.png" style="max-width: 20vw"/>
 
-    <div class="row q-pa-md q-mt-md">
+    <div class="row q-pa-md q-mt-md" style="padding-top: 1vh" >
       <div class="q-pr-sm">
         <q-card class="q-ma-sm flex flex-center bg-light-green" style="min-width: 39vw; min-height: 30vh;" @click="password = true">
           <q-card-section class="q-ma-sm">
@@ -12,23 +12,12 @@
         </q-card>
       </div>
 
-      <q-card class="q-ma-sm flex flex-center bg-red" style="min-width: 39vw; min-height: 30vh;" @click="more = true" >
+      <q-card class="q-ma-sm flex flex-center bg-orange" style="min-width: 39vw;  min-height: 30vh;" @click="logout" >
         <q-card-section class="q-ma-sm">
-          <q-img src="~/assets/profile/add.svg" style="min-width: 14vw; align: center;" />
-          <div class="text-bold"  style="text-align: center">SOBRE O NÓS</div>
+          <q-img src="~/assets/profile/on_off.svg" style="min-width: 14vw; align: center;" />
+          <div class="text-bold" style="text-align: center">SAIR</div>
         </q-card-section>
       </q-card>
-    </div>
-
-    <div class="row q-pa-md">
-      <div class="q-pr-sm">
-        <q-card class="q-ma-sm flex flex-center bg-orange" style="min-width: 39vw;  min-height: 30vh;" @click="logout" >
-          <q-card-section class="q-ma-sm">
-            <q-img src="~/assets/profile/on_off.svg" style="min-width: 14vw; align: center;" />
-            <div class="text-bold" style="text-align: center">SAIR</div>
-          </q-card-section>
-        </q-card>
-      </div>
     </div>
 
     <q-dialog v-model="password">
@@ -115,13 +104,13 @@ export default {
 
 <style lang="sass" scoped>
 .q-page
-  background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
+  background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)
 
 .q-img
-  display: block;
-  margin-top: 1.5vh;
-  margin-bottom: 3vh;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 15%;
+  display: block
+  margin-top: 1.5vh
+  margin-bottom: 3vh
+  margin-left: auto
+  margin-right: auto
+  max-width: 15%
 </style>

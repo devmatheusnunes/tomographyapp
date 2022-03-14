@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex column">
-    <q-img src="~/assets/quasar-logo-full.svg" />
+    <q-img src="~/assets/ctapp_logo.svg" style="max-width: 65vw" />
     <q-input class="q-mt-md q-px-md" v-model="login.email" filled type="email" hint="Email" />
     <q-input class="q-mt-md q-px-md" v-model="login.password" filled :type="isPwd ? 'password' : 'text'" hint="Senha">
       <template v-slot:append>
@@ -42,20 +42,20 @@ export default {
 
 <style lang="sass" scoped>
 .q-page
-  background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
+  background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)
 
 .q-img
-  display: block;
-  margin-top: 8vh;
-  margin-bottom: 3vh;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 80%;
+  display: block
+  margin-top: 8vh
+  margin-bottom: 3vh
+  margin-left: auto
+  margin-right: auto
+  max-width: 80%
 
 .q-btn
-  display: block;
-  margin-top: 6vh;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 80%;
+  display: block
+  margin-top: 6vh
+  margin-left: auto
+  margin-right: auto
+  max-width: 80%
 </style>
